@@ -1,0 +1,146 @@
+/* Estilo base */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    overflow: hidden; /* Evita desplazamientos */
+}
+
+body {
+    background: url('Fondo.jpg') no-repeat center center;
+    background-size: cover; /* Ajusta la imagen al contenedor */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #d4af37; /* Texto dorado */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6); /* Brillo suave */
+    font-size: 3rem;
+    margin: 20px;
+    z-index: 10; /* Asegura que esté encima del fondo */
+}
+
+/* Copos de nieve */
+.snowflake {
+    position: absolute;
+    top: -5%;
+    color: #ffffff;
+    font-size: 2rem; /* Tamaño ajustable */
+    opacity: 0.8;
+    pointer-events: none; /* No interferir con interacciones */
+    animation: snowFall linear infinite;
+}
+
+@keyframes snowFall {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(100vh); /* Cae fuera de la pantalla */
+    }
+}
+
+/* Muñeco de nieve */
+.muñeco {
+    position: absolute;  /* Cambié a absolute para posicionar respecto a la ventana */
+    bottom: 50px;        /* Ajusté más abajo en la página */
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    visibility: hidden; /* Inicialmente invisible, se mostrará al cargar */
+}
+
+.muñeco img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pensamiento con aspecto de globo de texto */
+.pensamiento {
+    position: absolute;
+    bottom: 210px;  /* Ajustado para estar más abajo respecto al muñeco */
+    left: 70%;      /* Ajusté a 70% para moverlo más a la derecha */
+    width: 220px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    visibility: hidden; /* Por defecto, invisible */
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Triángulo de pensamiento */
+.pensamiento::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid rgba(0, 0, 0, 0.7); /* Triángulo del mismo color que el cuadro */
+}
+
+/* Animación para mover al muñeco */
+@keyframes movimientoMuñeco {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(20px); }
+    75% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.muñeco.mover {
+    animation: movimientoMuñeco 0.5s ease-in-out;
+}
+
+/* Mensaje de bienvenida */
+#mensajeBienvenida {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 10;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem; /* Reducir tamaño del título en móviles */
+    }
+
+    .pensamiento {
+        width: 180px; /* Ajustar tamaño del cuadro en pantallas pequeñas */
+    }
+}
+/* Estilo del botón "Ir a la casa" */
+#irCasaBtn {
+    padding: 10px 20px;
+    background-color: #d4af37; /* Color dorado */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#irCasaBtn:hover {
+    background-color: #b38c2f; /* Color más oscuro al pasar el mouse */
+}

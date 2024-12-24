@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Navidad Mi amor</title>
+  <link rel="stylesheet" href="Principal.css">
+</head>
+<body>
+
+    <!-- Mensaje de bienvenida -->
+    <div id="mensajeBienvenida">
+      Hola mi amorcito, toca el muñeco de nieve
+    </div>
+
+    <!-- Audio-->
+    <audio id="audioFondo" loop autoplay volume="0.5">
+      <source src="Melodia.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+  <!-- Fondo y copos de nieve -->
+  <div class="background"></div>
+
+  <h1> </h1>
+  <h1> </h1>
+  <!-- Muñeco de nieve -->
+  <div id="muñeco" class="muñeco">
+    <img src="muñeco.png" alt="Muñeco de nieve">
+  </div>
+  
+   <!-- Botón "Ir a la casa" (invisible al principio) -->
+   <button id="irCasaBtn" style="display:none;" onclick="irACasa()">Ir a la casa</button>
+
+  <!-- Cuadro de pensamientos -->
+  <div id="pensamiento" class="pensamiento"></div>
+
+  <script src="Principal.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz navidad Princesa</title>
+    <link rel="stylesheet" href="casa.css">
+</head>
+<body>
+    <div id="taza" class="taza">
+        <img src="Taza.png" alt="Taza de chocolate caliente">
+    </div>
+
+    <div class="background"></div>
+
+    <div id="muñeco" class="muñeco">
+        <img src="muñeco.png" alt="Muñeco de nieve">
+    </div>
+
+    <audio id="audioFondo" loop autoplay volume="0.5">
+        <source src="Melodia2.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Video de YouTube incrustado -->
+    <div id="videoContainer" style="display: none;">
+        <iframe id="youtubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/4b2e8oL48eA?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div id="pensamiento" class="pensamiento"></div>
+
+    <button id="btnSorpresa" style="display: none;">¡Sorpresa!</button>
+
+    <!-- Nuevo botón para los fuegos artificiales -->
+    <div id="buttonContainer" style="display: none;">
+        <button id="btnFuegosArtificiales" onclick="goToFireworks()">¡Mira los fuegos artificiales! 🎆</button>
+    </div>
+
+    <!-- Solo este script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="casa.js"></script>
+</body>
+</html>
